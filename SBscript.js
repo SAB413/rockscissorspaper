@@ -1,3 +1,21 @@
+function getComputerChoice () {
+    let rnd = Math.random();
+    let compchoicestr = "";
+    if (rnd<0.33333) compchoicestr = "rock";
+    else if(rnd<0.66666) compchoicestr="scissors";
+    else compchoicestr = "paper";
+    console.log("Computer choice: "+compchoicestr)
+}
+
+getComputerChoice();
+
+
+
+
+
+/*
+PREVIOUS STUFF
+
 console.log("add7(9): "+add7(9));
 console.log("multiply(7,9): "+multiply(7,9));
 console.log("capitalise scOtt : "+capitalise("scOtt"));
@@ -23,5 +41,5 @@ function capitalise(text) {
 function lastletter(text) {
     return text.substr(-1);
 }
-
+*/
 
