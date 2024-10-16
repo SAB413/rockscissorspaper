@@ -1,39 +1,53 @@
+// removed playGame loop for now
+// playGame();
+let humanScore = 0;
+let computerScore = 0;
+let result = 0; 
+const resulttext = document.querySelector("#result");
+resulttext.textContent = "...";
+const humanscore = document.querySelector("#humanscore");
+const compscore = document.querySelector("#compscore");
 
-playGame();
+const btnrock = document.querySelector("#rock");
+btnrock.addEventListener('click', (e) => {
+    playRound ("rock");
+});
 
-function playGame (){
-    let humanScore = 0;
-    let computerScore = 0;
-    let humanPick = "";
-    let computerPick = "";
-    let result = 0;
+const btnscissors = document.querySelector("#scissors");
+btnscissors.addEventListener('click', (e) => {
+    playRound ("scissors");
+});
+    
+const btnpaper = document.querySelector("#paper");
+btnpaper.addEventListener('click', (e) => {
+    playRound ("paper");
+});
 
-    for (let i=1; i<6; i++) {
-        humanPick = getHumanChoice(i);
-        computerPick = getComputerChoice();
-        result = playRound(humanPick, computerPick);
-        if (result === 1) humanScore++;
-        if (result === -1) computerScore++
-    }
-    console.log("Game Over.  Final score: Human "+humanScore+" vs Computer "+computerScore)
-}
 
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice) {
+    let computerChoice = getComputerChoice();
     if ((humanChoice === 'rock' && computerChoice ==='scissors') ||
         (humanChoice === 'scissors' && computerChoice ==='paper') ||
         (humanChoice === 'paper' && computerChoice ==='rock')) {
+            resulttext.textContent = "You win! " + humanChoice + " beats "+computerChoice+".";
             console.log("You win! " + humanChoice + " beats "+computerChoice+".");
-            return 1;
+            humanScore++;
+            humanscore.textContent = ` ${humanScore}`;
+            return;
         }
     else if ((humanChoice === 'rock' && computerChoice ==='paper') ||
     (humanChoice === 'scissors' && computerChoice ==='rock') ||
     (humanChoice === 'paper' && computerChoice ==='scissors')) {
+        resulttext.textContent = "You lose! " + computerChoice + " beats "+humanChoice+".";
         console.log("You lose! " + computerChoice + " beats "+humanChoice+".");
-        return -1;
+        computerScore++;
+        compscore.textContent = ` ${computerScore}`;
+        return;
     }
     else {
+        resulttext.textContent = "It's a draw. "+ computerChoice + " matches "+humanChoice+".";
         console.log("It's a draw. "+ computerChoice + " matches "+humanChoice+".");
-        return 0;
+        return;
    }
 }
 
@@ -47,14 +61,5 @@ function getComputerChoice () {
     return compchoicestr;
 }
 
-function getHumanChoice (j) {
-    let humanchoicestr = "";
-    while (humanchoicestr != "rock" && humanchoicestr != "scissors" && humanchoicestr != "paper") {
-        humanchoicestr = prompt("Round: "+j+". Enter one of 'rock/scissors/paper': ");
-        humanchoicestr = humanchoicestr.toLowerCase();
-        console.log("Human choice: "+humanchoicestr)
-    }
-    return humanchoicestr;
-}
 
 

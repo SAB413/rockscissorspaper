@@ -3,11 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <title>Rock Scissors Paper</title>
   </head>
   <body>
     <h1>Rock Scissors Paper</h1>
-    <p>Just playing in the console for now...</p>
+    <div class="resultdivs" id="scoreboard">
+      <div class="scorestack">  
+        <p class="scorehead">
+        Human 
+        </p>
+        <p id="humanscore">0</p>
+      </div>
+    <div class="scorestack">
+      <p class="scorehead">
+        Computer
+      </p>
+      <p id="compscore">0</p>
+      </div>
+    </div>
+    
+    <div class="resultdivs" id="resulttext">
+      <p id="result"></p>
+    </div>
+
+    <div class="playarea">
+    <p id="playwords">Choose your weapon...</p>
+    <div class="playbuttons">
+      <button id="rock">Rock</button>
+      <button id="scissors">Scissors</button>
+      <button id="paper">Paper</button>
+    </div>
+  </div>
+    
+
+    
     <script src="SBscript.js"></script>
   </body>
 </html>

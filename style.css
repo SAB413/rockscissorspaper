@@ -1,0 +1,58 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width : 300px;
+}
+
+button {
+    margin: 10px;
+    padding:10px;
+    border-radius:10px;
+    color:white;
+    background-color: black;
+    border:none;
+}
+
+p {
+    margin:0px;
+}
+
+#resulttext {
+    justify-content: center;  
+}
+
+.playarea {
+    padding: 20px;
+    background-color: rgb(180, 214, 252);
+}
+
+.playbuttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#resulttext {
+    background-color: rgb(173, 179, 240);
+}
+
+.resultdivs {
+    width : 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(126, 133, 190);
+    display:flex;
+    justify-content: space-between;
+}
+
+.scorehead {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.scorestack {
+    width: 100px; 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 30px;
+    padding-left:30px;
+}
