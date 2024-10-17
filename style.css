@@ -8,7 +8,7 @@ button {
     padding:10px;
     border-radius:10px;
     color:white;
-    background-color: black;
+    background-color: #f79256;
     border:none;
 }
 
@@ -17,12 +17,12 @@ p {
 }
 
 #resulttext {
-    justify-content: center;  
+    text-align: center;  
 }
 
 .playarea {
     padding: 20px;
-    background-color: rgb(180, 214, 252);
+    background-color: #FBD1A2;
 }
 
 .playbuttons {
@@ -31,15 +31,17 @@ p {
 }
 
 #resulttext {
-    background-color: rgb(173, 179, 240);
+    background-color: #7DCFB6;
+    display: block;
+    align-items: center;
 }
 
 .resultdivs {
     width : 300px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: rgb(126, 133, 190);
-    display:flex;
+    background-color: #00B2CA;
+    display:flex; 
     justify-content: space-between;
 }
 

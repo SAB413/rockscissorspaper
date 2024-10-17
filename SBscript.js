@@ -2,25 +2,65 @@
 // playGame();
 let humanScore = 0;
 let computerScore = 0;
-let result = 0; 
+let outcomestr = "none"; 
 const resulttext = document.querySelector("#result");
+const finalresult = document.querySelector("#finalresult");
 resulttext.textContent = "...";
 const humanscore = document.querySelector("#humanscore");
 const compscore = document.querySelector("#compscore");
 
 const btnrock = document.querySelector("#rock");
-btnrock.addEventListener('click', (e) => {
-    playRound ("rock");
-});
-
 const btnscissors = document.querySelector("#scissors");
+const btnpaper = document.querySelector("#paper");
+
+btnrock.addEventListener('click', (e) => {
+    outcomestr = playRound("rock");
+    if (outcomestr ==="human") {
+        finalresult.textContent = "Human Wins. Press <<Play Again>>";
+        btnrock.disabled = true;
+        btnscissors.disabled = true;
+        btnpaper.disabled = true;
+    }
+    else if (outcomestr ==="comp") {
+        finalresult.textContent = "Computer Wins. Press <<Play Again>>";
+        btnrock.disabled = true;
+        btnscissors.disabled = true;
+        btnpaper.disabled = true;
+    }       
+}); 
+
+
 btnscissors.addEventListener('click', (e) => {
-    playRound ("scissors");
+    outcomestr = playRound ("scissors");
+    if (outcomestr ==="human") {
+        finalresult.textContent = "Human Wins. Press <<Play Again>>";
+        btnrock.disabled = true;
+        btnscissors.disabled = true;
+        btnpaper.disabled = true;
+    }
+    else if (outcomestr ==="comp") {
+        finalresult.textContent = "Computer Wins. Press <<Play Again>>";
+        btnrock.disabled = true;
+        btnscissors.disabled = true;
+        btnpaper.disabled = true;
+    }
 });
     
-const btnpaper = document.querySelector("#paper");
+
 btnpaper.addEventListener('click', (e) => {
-    playRound ("paper");
+    outcomestr = playRound ("paper");
+    if (outcomestr ==="human") {
+        finalresult.textContent = "Human Wins. Press <<Play Again>>";
+        btnrock.disabled = true;
+        btnscissors.disabled = true;
+        btnpaper.disabled = true;
+    }
+    else if (outcomestr ==="comp") {
+        finalresult.textContent = "Computer Wins. Press <<Play Again>>";
+        btnrock.disabled = true;
+        btnscissors.disabled = true;
+        btnpaper.disabled = true;
+    }
 });
 
 
@@ -33,7 +73,7 @@ function playRound(humanChoice) {
             console.log("You win! " + humanChoice + " beats "+computerChoice+".");
             humanScore++;
             humanscore.textContent = ` ${humanScore}`;
-            return;
+            if (humanScore==5) return("human");
         }
     else if ((humanChoice === 'rock' && computerChoice ==='paper') ||
     (humanChoice === 'scissors' && computerChoice ==='rock') ||
@@ -42,12 +82,12 @@ function playRound(humanChoice) {
         console.log("You lose! " + computerChoice + " beats "+humanChoice+".");
         computerScore++;
         compscore.textContent = ` ${computerScore}`;
-        return;
+        if (computerScore==5) return("comp");
     }
     else {
         resulttext.textContent = "It's a draw. "+ computerChoice + " matches "+humanChoice+".";
         console.log("It's a draw. "+ computerChoice + " matches "+humanChoice+".");
-        return;
+        return("none");
    }
 }
 
