@@ -3,6 +3,16 @@ body{
     width : 300px;
 }
 
+h1 {
+    font-size: 48px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+}
+
 button {
     margin: 10px;
     padding:10px;
@@ -23,21 +33,29 @@ p {
 .playarea {
     padding: 20px;
     background-color: #FBD1A2;
+    text-shadow: 2px 2px 1px lightgray;
+    font-weight: 800;
 }
 
-.playbuttons {
+#playbuttons {
+
     display: flex;
     justify-content: space-between;
+}
+
+#finalresult {
+    font-weight: 900;
 }
 
 #resulttext {
     background-color: #7DCFB6;
     display: block;
     align-items: center;
+    height : 40px;
 }
 
 .resultdivs {
-    width : 300px;
+    width : 100%;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #00B2CA;
@@ -46,7 +64,8 @@ p {
 }
 
 .scorehead {
-    text-decoration: underline;
+    font-weight: 800;
+    text-shadow: 2px 2px 1px lightgray;
     margin-bottom: 10px;
 }
 
