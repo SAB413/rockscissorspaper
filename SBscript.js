@@ -39,10 +39,10 @@ btns.addEventListener('click', (e) => {
         body.appendChild(div);
     }
     if (outcomestr ==="human") {
-        finalresult.textContent = "Human Wins. Press <<Play Again>>";
+        finalresult.textContent = "Human Wins";
     }
     else if (outcomestr ==="comp") {
-        finalresult.textContent = "Computer Wins. Press <<Play Again>>";
+        finalresult.textContent = "Computer Wins";
     } 
 }); 
 

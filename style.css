@@ -5,6 +5,8 @@ body{
 
 h1 {
     font-size: 48px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #header {
@@ -48,17 +50,20 @@ p {
 }
 
 #resulttext {
-    background-color: #7DCFB6;
     display: block;
     align-items: center;
     height : 40px;
 }
 
+#scoreboard {
+    padding:0;
+}
+
 .resultdivs {
     width : 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #00B2CA;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #7DCFB6;
     display:flex; 
     justify-content: space-between;
 }
@@ -76,4 +81,5 @@ p {
     align-items: center;
     padding-right: 30px;
     padding-left:30px;
+    border: 1px  solid #FBD1A2;
 }
